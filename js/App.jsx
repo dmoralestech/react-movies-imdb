@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from './Landing';
 import Search from './Search';
@@ -27,8 +27,8 @@ const App = () => (
 );
 
 
-// App.propTypes = {
-//   match: PropTypes.object.isRequired
-// }
+App.propTypes = {
+  match: PropTypes.shape ({params: {id: {}}})
+}
 
 export default App;

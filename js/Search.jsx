@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ShowCard from './ShowCard';
 
 
@@ -29,8 +29,7 @@ class Search extends Component {
           />
         </header>
         <div>
-          {this.props.shows
-            .filter(
+          {this.props.shows.filter(
               show =>
               `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
             )
@@ -41,8 +40,8 @@ class Search extends Component {
   }
 }
 
-// Search.propTypes = {
-//   shows: PropTypes.array.isRequired
-// }
+Search.propTypes = {
+  shows: PropTypes.shape([])
+}
 
 export default Search;
