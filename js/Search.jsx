@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+// import PropTypes from 'prop-types';
 import ShowCard from './ShowCard';
 
+
 class Search extends Component {
-  state = {
-    searchTerm: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchTerm: ''
+    };
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
+  }
+
+  handleSearchTermChange(event) {
+    this.setState({searchTerm: event.target.value});
   };
-  handleSearchTermChange = (event) => {
-    this.setState({ searchTerm: event.target.value });
-  };
+
   render() {
     return (
       <div className="search">
@@ -32,5 +40,9 @@ class Search extends Component {
     );
   }
 }
+
+// Search.propTypes = {
+//   shows: PropTypes.array.isRequired
+// }
 
 export default Search;

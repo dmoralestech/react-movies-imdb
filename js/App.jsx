@@ -1,8 +1,6 @@
-// @flow
-
 import React from 'react';
+// import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Match } from 'react-router-dom';
 import Landing from './Landing';
 import Search from './Search';
 import Details from './Details';
@@ -16,8 +14,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/search" component={props => <Search shows={preload.shows} {...props} />} />
-        <Route
-          path="/details/:id"
+        <Route path="/details/:id"
           component={(props) => {
             const selectedShow = preload.shows.find(show => props.match.params.id === show.imdbID);
             return <Details show={selectedShow} {...props} />;
@@ -28,5 +25,10 @@ const App = () => (
     </div>
   </BrowserRouter>
 );
+
+
+// App.propTypes = {
+//   match: PropTypes.object.isRequired
+// }
 
 export default App;

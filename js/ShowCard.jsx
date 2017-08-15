@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   width: 32%;
@@ -26,5 +27,12 @@ const ShowCard = (props) => (
     </div>
   </Wrapper>
 );
+
+ShowCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+}
 
 export default ShowCard;
