@@ -44,4 +44,8 @@ Search.propTypes = {
   shows: PropTypes.shape([])
 }
 
+Search.defaultProps = {
+  shows: []
+};
+
 export default Search;
