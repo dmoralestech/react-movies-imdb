@@ -6,7 +6,7 @@ import Spinner from './Spinner';
 
 class Details extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state({
       apiData: {rating: ''}
@@ -62,7 +62,14 @@ Details.propTypes = {
 };
 
 Details.defaultProps = {
-  show: {}
+  show: {
+    imdbID: '',
+    title: '',
+    description: '',
+    year: '',
+    poster: '',
+    trailer: ''
+  }
 }
 
 export default Details;
