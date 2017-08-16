@@ -1,19 +1,26 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import Header from './Header';
 import Spinner from './Spinner';
 
 class Details extends Component {
-  state = {
-    apiData: { rating: '' }
-  };
+
+  constructor(props){
+    super(props);
+    this.state({
+      apiData: {rating: ''}
+    })
+  }
+
   componentDidMount() {
     axios.get(`http://localhost:3000/${this.props.show.imdbID}`).then((response) => {
-      this.setState({ apiData: response.data });
+      this.setState({apiData: response.data});
     });
   }
+
   render() {
-    const { title, description, year, poster, trailer } = this.props.show;
+    const {title, description, year, poster, trailer} = this.props.show;
     let ratingComponent;
     if (this.state.apiData.rating) {
       ratingComponent = <h3>{this.state.apiData.rating}</h3>;
@@ -27,7 +34,7 @@ class Details extends Component {
           <h1>{title}</h1>
           <h2>({year})</h2>
           {ratingComponent}
-          <img src={`/public/img/posters/${poster}`} alt={`Poster for ${title}`} />
+          <img src={`/public/img/posters/${poster}`} alt={`Poster for ${title}`}/>
           <p>{description}</p>
         </section>
         <div>
@@ -41,6 +48,21 @@ class Details extends Component {
       </div>
     );
   }
+}
+
+Details.propTypes = {
+  show: PropTypes.shape({
+    imdbID: '',
+    title: '',
+    description: '',
+    year: '',
+    poster: '',
+    trailer: ''
+  })
+};
+
+Details.defaultProps = {
+  show: {}
 }
 
 export default Details;
