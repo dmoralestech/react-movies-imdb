@@ -20,8 +20,13 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Landing.propTypes = {
-  searchTerm: PropTypes.string.isRequired,
-  handleSearchTermChange: PropTypes.func.isRequired
+  searchTerm: PropTypes.string,
+  handleSearchTermChange: PropTypes.func
 };
+
+Landing.defaultProps = {
+  searchTerm: '',
+  handleSearchTermChange: function noop() {}
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);

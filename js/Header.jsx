@@ -30,9 +30,9 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  showSearch: PropTypes.boolean.isRequired,
-  handleSearchTermChange: PropTypes.func.isRequired,
-  searchTerm: PropTypes.string.isRequired
+  showSearch: PropTypes.boolean,
+  handleSearchTermChange: PropTypes.func,
+  searchTerm: PropTypes.string
 };
 
 Header.defaultProps = {
