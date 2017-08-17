@@ -29,10 +29,17 @@ const ShowCard = (props) => (
 );
 
 ShowCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  year: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  poster: PropTypes.string,
+  description: PropTypes.string,
+  year: PropTypes.string,
+}
+
+ShowCard.defaultProps = {
+  title: '',
+  poster: '',
+  description: '',
+  year: '',
 }
 
 export default ShowCard;

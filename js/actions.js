@@ -1,2 +1,3 @@
 const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
-export { SET_SEARCH_TERM as default};
+
+export {SET_SEARCH_TERM as default};
