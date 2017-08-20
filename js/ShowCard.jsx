@@ -29,17 +29,19 @@ const ShowCard = (props) => (
 );
 
 ShowCard.propTypes = {
+  imdbID: PropTypes.string,
   title: PropTypes.string,
   poster: PropTypes.string,
   description: PropTypes.string,
   year: PropTypes.string,
-}
+};
 
 ShowCard.defaultProps = {
+  imdbID: '',
   title: '',
   poster: '',
   description: '',
   year: '',
-}
+};
 
 export default ShowCard;
