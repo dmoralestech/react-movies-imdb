@@ -10,8 +10,6 @@ import preload from '../data.json';
 
 const FourOhFour = () => <h1>404</h1>;
 
-console.log('preload', preload)
-
 const App = () => (
   <BrowserRouter>
     <Provider store={store}>

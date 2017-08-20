@@ -1,7 +1,9 @@
-import SET_SEARCH_TERM from './actions';
+import {SET_SEARCH_TERM, ADD_API_DATA} from './actions';
 
-function setSearchTerm(searchTerm) {
+export function setSearchTerm(searchTerm) {
   return {type: SET_SEARCH_TERM, payload: searchTerm };
 }
 
-export {setSearchTerm as default}
+export function addAPIData(apiData) {
+  return { type: ADD_API_DATA, payload: apiData };
+}
