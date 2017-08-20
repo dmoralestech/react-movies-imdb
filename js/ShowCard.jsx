@@ -18,10 +18,11 @@ const Image = styled.img`
 `;
 
 const ShowCard = (props) => (
-  <Wrapper to={`/details/${this.props.imdbID}`}>
+  <Wrapper to={`/details/${props.imdbID}`}>
     <Image alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
     <div>
       <h3>{props.title}</h3>
+      <h4>({props.year})</h4>
       <h4>({props.year})</h4>
       <p>{props.description}</p>
     </div>
@@ -29,17 +30,19 @@ const ShowCard = (props) => (
 );
 
 ShowCard.propTypes = {
+  imdbID: PropTypes.string,
   title: PropTypes.string,
   poster: PropTypes.string,
   description: PropTypes.string,
   year: PropTypes.string,
-}
+};
 
 ShowCard.defaultProps = {
+  imdbID: '',
   title: '',
   poster: '',
   description: '',
   year: '',
-}
+};
 
 export default ShowCard;
