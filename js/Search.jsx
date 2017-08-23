@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import ShowCard from './ShowCard';
 
 
@@ -48,4 +49,9 @@ Search.defaultProps = {
   shows: []
 };
 
-export default Search;
+const mapStateToProps = state => ({
+  searchTerm: state.searchTerm
+});
+
+export const Unwrapped = Search;
+export default connect(mapStateToProps)(Search);
