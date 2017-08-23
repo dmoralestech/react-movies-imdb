@@ -6,10 +6,12 @@ import App from './App';
 // const Test = () => ( <h1> Hello World </h1> )
 
 const renderApp = () => {
-  render(<BrowserRouter>
+  render(
+    <BrowserRouter>
       <App />
     </BrowserRouter>,
-    document.getElementById('app'));
+    document.getElementById('app')
+  );
 };
 renderApp();
 
