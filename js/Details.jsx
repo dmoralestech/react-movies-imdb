@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Header from './Header';
 import Spinner from './Spinner';
+import { getAPIDetails } from './actionCreators';
+
+
+
 
 class Details extends Component {
 
@@ -72,4 +77,17 @@ Details.defaultProps = {
   }
 }
 
-export default Details;
+const mapStateToProps = (state, ownProps) => {
+  const apiData = state.apiData[ownProps.show.imdbID] ? state.apiData[ownProps.show.imdbID] : {};
+  return {
+    rating: apiData.rating
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  getAPIData() {
+    dispatch(getAPIDetails(ownProps.show.imdbID));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);
